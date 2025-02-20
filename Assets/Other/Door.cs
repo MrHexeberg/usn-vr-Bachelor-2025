@@ -1,70 +1,48 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class Door : MonoBehaviour
 {
 
-    bool trig, open;//trig-проверка входа выхода в триггер(игрок должен быть с тегом Player) open-закрыть и открыть дверь
-    public float smooth = 2.0f;//скорость вращения
-    public float DoorOpenAngle = 90.0f;//угол вращения 
+    bool trig, open;
+    public float smooth = 2.0f;
+    public float DoorOpenAngle = 90.0f;
     private Vector3 defaulRot;
     private Vector3 openRot;
-    public Text txt;//text 
-    // Start is called before the first frame update
+
+    public GameState GameState;
+    public int DoorID = 0;
+    public bool DoorState = false;
+
+
     void Start()
     {
+
+        GameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameState>();
         defaulRot = transform.eulerAngles;
         openRot = new Vector3(defaulRot.x, defaulRot.y + DoorOpenAngle, defaulRot.z);
+
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (open)//открыть
+
+        DoorState = GameState.Door[DoorID];
+        if (DoorState == true)
         {
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * smooth);
         }
-        else//закрыть
+        else
         {
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaulRot, Time.deltaTime * smooth);
         }
-        if (Input.GetKeyDown(KeyCode.E) && trig)
-        {
-            open = !open;
-        }
-        if (trig)
-        {
-            if (open)
-            {
-                txt.text = "Close E";
-            }
-            else
-            {
-                txt.text = "Open E";
-            }
-        }
-    }
-    private void OnTriggerEnter(Collider coll)//вход и выход в\из  триггера 
-    {
-        if (coll.tag == "Player")
-        {
-            if (!open)
-            {
-                txt.text = "Close E ";
-            }
-            else
-            {
-                txt.text = "Open E";
-            }
-            trig = true;
-        }
-    }
-    private void OnTriggerExit(Collider coll)//вход и выход в\из  триггера 
-    {
-        if (coll.tag == "Player")
-        {
-            txt.text = " ";
-            trig = false;
-        }
+
+
     }
 }
+    

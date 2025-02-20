@@ -62311,7 +62311,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 2
   DoorOpenAngle: 90
-  txt: {fileID: 1402587779}
+  GameState: {fileID: 0}
+  DoorID: 0
+  DoorState: 0
 --- !u!1001 &1660645435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70898,6 +70900,10 @@ PrefabInstance:
       propertyPath: txt
       value: 
       objectReference: {fileID: 1402587779}
+    - target: {fileID: 770745707956653096, guid: 7d1424a14fad8ce4c845abab6cfa920f, type: 3}
+      propertyPath: DoorID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5561517098873156946, guid: 7d1424a14fad8ce4c845abab6cfa920f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -72138,7 +72144,7 @@ GameObject:
   - component: {fileID: 1923283428}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: GameState
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72155,7 +72161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46f92d6f38719647b3133f1edf3e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Door: 0
+  Door: 01010101
 --- !u!4 &1923283429
 Transform:
   m_ObjectHideFlags: 0
@@ -80410,7 +80416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 337296309448419817, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_Antialiasing
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 337296309448419817, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_RenderShadows
@@ -81783,6 +81789,10 @@ PrefabInstance:
     - target: {fileID: 603629352026998885, guid: 65537cd4271f32a449664281e7d39f24, type: 3}
       propertyPath: m_Name
       value: Front_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886706574884586195, guid: 65537cd4271f32a449664281e7d39f24, type: 3}
+      propertyPath: DoorID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7757871858900579660, guid: 65537cd4271f32a449664281e7d39f24, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90643,6 +90653,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1552438076}
     m_Modifications:
+    - target: {fileID: 770745707956653096, guid: 7d1424a14fad8ce4c845abab6cfa920f, type: 3}
+      propertyPath: DoorID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5561517098873156946, guid: 7d1424a14fad8ce4c845abab6cfa920f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

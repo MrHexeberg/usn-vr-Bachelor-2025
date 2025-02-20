@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
 
-    public bool Door = false;
+    public bool[] Door = { false, false, false, false, };
     // Start is called before the first frame update
     void Start()
     {
