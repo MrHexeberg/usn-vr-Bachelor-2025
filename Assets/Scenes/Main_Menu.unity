@@ -270,13 +270,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_Move
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_Turn
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_SnapTurn
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_UIScroll
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_TeleportMode
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_RayInteractor
       value: 
       objectReference: {fileID: 537444791}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_NearFarInteractor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_TeleportInteractor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145329995080136232, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_TeleportModeCancel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1166631496892842205, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -289,9 +321,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2225813905970538598, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2662075707412871238, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3888448241171186319, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_IsActive
@@ -565,6 +601,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7596548210239971858, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7708673523090580408, guid: c9e64eb29dca312468b356954f830b46, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -583,6 +623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5858525994967998230, guid: c9e64eb29dca312468b356954f830b46, type: 3}
+    - {fileID: 6305326048013022005, guid: c9e64eb29dca312468b356954f830b46, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6577796444869283660, guid: c9e64eb29dca312468b356954f830b46, type: 3}
@@ -2036,7 +2077,6 @@ GameObject:
   - component: {fileID: 1181343075}
   - component: {fileID: 1181343074}
   - component: {fileID: 1181343078}
-  - component: {fileID: 1181343077}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2118,18 +2158,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1181343077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181343073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d51621034e6084aafb20d696c0e214, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1181343078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2249,7 +2277,7 @@ MonoBehaviour:
   m_PointAction: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
   m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+  m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
   m_NavigateAction: {fileID: 0}
   m_SubmitAction: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
@@ -2353,7 +2381,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2374,9 +2402,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: f2d51621034e6084aafb20d696c0e214, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 637552496}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
