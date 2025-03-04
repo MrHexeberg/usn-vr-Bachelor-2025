@@ -6,6 +6,8 @@ public class GameState : MonoBehaviour
 {
 
     public bool[] Door = { false, false, false, false, };
+    public bool[] Puzzel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,11 @@ public class GameState : MonoBehaviour
        
     }
     
-    void Seeantrans()
+    public void PuzzelSolved(int PuzzelID)
     {
-
+        Door[PuzzelID] = true;
     }
-
+    public void PuzzelUnSolved(int PuzzelID){
+        Door[PuzzelID] = false;
+    }
 }
