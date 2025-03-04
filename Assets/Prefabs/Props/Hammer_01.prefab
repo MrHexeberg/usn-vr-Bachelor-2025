@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 1399060552312018269}
   - component: {fileID: 5985456359133518709}
   - component: {fileID: 2873423525012540567}
+  - component: {fileID: 581959524032313742}
   m_Layer: 0
   m_Name: Hammer_01
   m_TagString: Hammer
@@ -484,3 +485,24 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!65 &581959524032313742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808238865274321046}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.15, z: 0.33}
+  m_Center: {x: 0, y: 0, z: 0.05}
