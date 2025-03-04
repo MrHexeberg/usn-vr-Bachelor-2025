@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - GameState
+  - Hammer
   layers:
   - Default
   - TransparentFX
