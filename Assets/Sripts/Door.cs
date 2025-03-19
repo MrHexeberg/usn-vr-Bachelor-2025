@@ -9,14 +9,18 @@ public class Door : MonoBehaviour
 
     public float Speed = 2.0f;
     public float DoorOpenAngle = 90.0f;
-
-
-    private Vector3 defaulRot;
-    private Vector3 openRot;
-
+    
     public GameState GameState;
     public int DoorID = 0;
     public bool DoorState;
+    
+    [SerializeField] private AudioClip DoorAudioOpen;
+    [SerializeField] private AudioClip DoorAudioClose;
+
+    private AudioSource audioSource;
+    private Vector3 defaulRot;
+    private Vector3 openRot;
+
 
 
     void Start()
@@ -25,6 +29,9 @@ public class Door : MonoBehaviour
         GameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameState>();
         defaulRot = transform.eulerAngles;
         openRot = new Vector3(defaulRot.x, defaulRot.y + DoorOpenAngle, defaulRot.z);
+        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = DoorAudioClose;
 
 
     }
@@ -50,9 +57,19 @@ public class Door : MonoBehaviour
     public void DoorOpen()
     {
         transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * Speed);
+       if (audioSource.clip != DoorAudioOpen){
+        audioSource.Stop(); 
+        audioSource.clip = DoorAudioOpen;
+        audioSource.Play();
+       }
     }
     public void DoorClose()
     {
         transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaulRot, Time.deltaTime * Speed);
+        if (audioSource.clip != DoorAudioClose){
+        audioSource.Stop();
+        audioSource.clip = DoorAudioClose;
+        audioSource.Play();
+        }
     }
 }
