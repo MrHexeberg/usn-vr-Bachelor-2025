@@ -17,6 +17,7 @@ TagManager:
   - Cup_02
   - Canned_Plum
   - Frying_pan
+  - TrapStep
   layers:
   - Default
   - TransparentFX
