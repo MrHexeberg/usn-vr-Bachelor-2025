@@ -18,6 +18,8 @@ TagManager:
   - Canned_Plum
   - Frying_pan
   - TrapStep
+  - Indoor
+  - Outdoor
   layers:
   - Default
   - TransparentFX
