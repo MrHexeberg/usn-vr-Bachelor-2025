@@ -20,6 +20,7 @@ TagManager:
   - TrapStep
   - Indoor
   - Outdoor
+  - InsideHouse
   layers:
   - Default
   - TransparentFX
