@@ -3,15 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Anchor
+  - GameState
+  - Hammer
+  - Shovel
+  - Axe
+  - Bone1
+  - Bone2
+  - Bone3
+  - Bone4
+  - Meat_Knife
+  - Cup_02
+  - Canned_Plum
+  - Frying_pan
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - PostProcessing
   - 
   - 
   - 
