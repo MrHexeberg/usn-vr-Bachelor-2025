@@ -5,6 +5,9 @@ public class MusicManager : MonoBehaviour
     public static MusicManager Instance;
     public AudioSource audioSource;
 
+    [SerializeField] private AudioClip WoodAudioPonter;
+
+
     void Awake()
     {
         if (Instance == null)
