@@ -193,7 +193,7 @@ Material:
     - _Ambient_Occlusion: 0
     - _ApertureSize: 0.849
     - _Blend: 1
-    - _BlendModePreserveSpecular: 1
+    - _BlendModePreserveSpecular: 0
     - _BlendOp: 0
     - _BrightnessMultiplier: 3.93
     - _BumpScale: 1
@@ -217,7 +217,7 @@ Material:
     - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _HeightTransition: 0
-    - _Metallic: 0.005
+    - _Metallic: 0
     - _Metallic0: 0
     - _Metallic1: 0
     - _Metallic2: 0
