@@ -15,16 +15,32 @@ public class BookSkript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mAnimator != null)
-        {
-            if(Input.GetKeyDown(KeyCode.O))
-            {
-                mAnimator.SetTrigger("TgPageForward");
-            }
-            if(Input.GetKeyDown(KeyCode.P))
-            {
-                mAnimator.SetTrigger("TgPageBack");
-            }
-        }
+
     }
+    void PageForward() {
+    mAnimator.SetTrigger("TgPageForward");
 }
+
+    void PageBack() {
+        mAnimator.SetTrigger("TgPageBack");
+    }
+
+ public void  PageSwith (){
+
+     if (mAnimator != null){
+        if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("page forward")){
+            PageBack();
+        }
+        else{
+            PageForward();
+        }
+     }
+ }
+
+
+
+
+}
+
+
+
