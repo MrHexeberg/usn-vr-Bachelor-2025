@@ -10,19 +10,30 @@ public class Fall_Teleport : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           
-            StartCoroutine(TeleportAfterDelay(other));
+            PlayerTrapStatus trapStatus = other.GetComponent<PlayerTrapStatus>();
+            if (trapStatus != null && trapStatus.isFallingFromTrap)
+            {
+                
+                StartCoroutine(TeleportAfterDelay(other, trapStatus));
+            }
+            else
+            {
+               
+            }
         }
     }
 
-    private IEnumerator TeleportAfterDelay(Collider player)
+    private IEnumerator TeleportAfterDelay(Collider player, PlayerTrapStatus trapStatus)
     {
         yield return new WaitForSeconds(teleportDelay);
 
         if (player != null)
         {
-           
+          
             player.transform.position = respawnPoint.position;
+
+            // Reset fall flag
+            trapStatus.ResetTrapFall();
         }
     }
 }

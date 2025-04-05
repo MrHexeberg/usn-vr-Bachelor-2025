@@ -6,7 +6,9 @@ public class TrapStep : MonoBehaviour
     private bool isTriggered = false;
     private Rigidbody rb;
 
-    [SerializeField] private GameObject stairs; // Assign the stairs GameObject in the Inspector
+    [SerializeField] private GameObject stairs; // Assign the stairs GameObject in the Inspector          
+    [SerializeField] private AudioSource audioSource;    
+    [SerializeField] private AudioClip shakeAudioClip;   
 
     void Start()
     {
@@ -17,6 +19,12 @@ public class TrapStep : MonoBehaviour
 
         if (stairs == null)
             Debug.LogError("TrapStep: Stairs reference is missing!");
+
+        if (audioSource == null)
+            Debug.LogWarning("TrapStep: AudioSource is not assigned!");
+
+        if (shakeAudioClip == null)
+            Debug.LogWarning("TrapStep: Shake AudioClip is not assigned!");
     }
 
     void OnTriggerEnter(Collider other)
@@ -31,10 +39,18 @@ public class TrapStep : MonoBehaviour
     IEnumerator ShakeStep()
     {
         // Start shaking stairs
+        if (audioSource != null && shakeAudioClip != null)
+        {
+            audioSource.clip = shakeAudioClip;
+            audioSource.Play();
+        }
+
+        
         if (stairs)
             StartCoroutine(ShakeObject(stairs.transform));
 
         // Slight shake of this step before falling
+
         Vector3 originalPosition = transform.position;
         float elapsedTime = 0f;
         float shakeDuration = 1f;
@@ -54,15 +70,18 @@ public class TrapStep : MonoBehaviour
     void DropStep()
     {
         // Disable stairs' collider so player falls
+
         MeshCollider stairMesh = stairs.GetComponent<MeshCollider>();
         if (stairMesh != null)
             stairMesh.enabled = false;
 
         // Re-enable collider later
+
         StartCoroutine(ReenableStair(stairs));
         StartCoroutine(ResetTriggerCooldown());
 
         // Make the trap fall
+
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);

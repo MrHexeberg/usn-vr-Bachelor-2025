@@ -6,18 +6,22 @@ public class TrapStep_Fall : MonoBehaviour
     private bool isTriggered = false;
     private Rigidbody rb;
 
-    [SerializeField] private GameObject stairs; // Assign the real stairs or its parent in the Inspector
+    [SerializeField] private GameObject stairs; 
+    [SerializeField] private AudioSource audioSource; 
+    [SerializeField] private AudioClip fallSound;     
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        // Safety checks
         if (rb == null)
-            return;
+            Debug.LogError("TrapStep_Fall: Rigidbody is missing!");
 
         if (stairs == null)
-            return;
+            Debug.LogError("TrapStep_Fall: Stairs reference is missing!");
+
+        if (audioSource == null)
+            Debug.LogError("TrapStep_Fall: AudioSource is missing!");
     }
 
     void OnTriggerEnter(Collider other)
@@ -66,6 +70,20 @@ public class TrapStep_Fall : MonoBehaviour
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+        
+        if (audioSource != null && fallSound != null)
+        {
+            audioSource.clip = fallSound;
+            audioSource.Play();
+        }
+
+        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.SendMessage("MarkAsFallingFromTrap", SendMessageOptions.DontRequireReceiver);
+        }
     }
 
     IEnumerator ReenableStair(MeshCollider stairMesh)
@@ -97,5 +115,12 @@ public class TrapStep_Fall : MonoBehaviour
         }
 
         obj.position = originalPos;
+    }
+
+   
+    public void SetVolume(float volume)
+    {
+        if (audioSource != null)
+            audioSource.volume = volume;
     }
 }
