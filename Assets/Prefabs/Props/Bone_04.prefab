@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6040680122171390778}
   m_Layer: 0
   m_Name: Bone_04
-  m_TagString: Bone4
+  m_TagString: Spine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,10 +316,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.34
-  m_Height: 0
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.09
+  m_Height: 0.9
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.04, z: 0}
 --- !u!1 &3381753950855819389
 GameObject:
   m_ObjectHideFlags: 0

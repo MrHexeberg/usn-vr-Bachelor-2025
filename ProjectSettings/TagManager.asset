@@ -9,10 +9,6 @@ TagManager:
   - Hammer
   - Shovel
   - Axe
-  - Bone1
-  - Bone2
-  - Bone3
-  - Bone4
   - Meat_Knife
   - Cup_02
   - Canned_Plum
@@ -21,6 +17,9 @@ TagManager:
   - Indoor
   - Outdoor
   - InsideHouse
+  - Voodoo_Doll
+  - Spine
+  - Skull
   layers:
   - Default
   - TransparentFX
