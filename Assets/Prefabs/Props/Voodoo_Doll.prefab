@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 2488487179070694814}
   - component: {fileID: 8026325822975004043}
   - component: {fileID: 2015570747946272488}
+  - component: {fileID: 2939477435349258693}
   m_Layer: 0
   m_Name: Voodoo_Doll
   m_TagString: Voodoo_Doll
@@ -462,3 +463,24 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 1
+--- !u!65 &2939477435349258693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041510159486388309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.20256302, y: 0.065367304, z: 0.136031}
+  m_Center: {x: -0.0026060194, y: 0.029206272, z: 0.0019940287}

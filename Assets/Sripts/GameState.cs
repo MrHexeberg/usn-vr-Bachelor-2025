@@ -18,7 +18,7 @@ public class GameState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Door[4] == false){
+        if ( Door[4] == true){
             SceneManager.LoadScene(0); //going back to main menu
         }
        
