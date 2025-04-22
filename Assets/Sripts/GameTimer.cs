@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class GameTimer : MonoBehaviour
 {
@@ -7,26 +8,31 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        
-
         if (isRunning)
             playTime += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log("T key was pressed!"); //testing button T to know if timer works before we add puzzle 3 so timer stops.. 
-            StopTimer();
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
-        }
+       
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     Debug.Log("T key was pressed!"); //testing button T to know if timer works before we add puzzle 3 so timer stops..
+        //     StopTimer();
+        //     UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
+        // }
     }
-
-
 
     public void StopTimer()
     {
         isRunning = false;
         SaveTime(playTime);
-        
+
+        // here we get littlee delayS
+        StartCoroutine(LoadMainMenuAfterDelay(5f)); 
+    }
+
+    IEnumerator LoadMainMenuAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0); // Loads scene by build index (Main Menu)
     }
 
     void SaveTime(float newTime)

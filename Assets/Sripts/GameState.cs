@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
+    public GameTimer gameTimer;
 
     public bool[] Door = { false, false, false, false,false };
     
@@ -18,12 +19,17 @@ public class GameState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Door[4] == true){
-            SceneManager.LoadScene(0); //going back to main menu
+        if (Door[4] == true)
+        {
+            if (gameTimer != null)
+            {
+                gameTimer.StopTimer();
+            }
+
+            SceneManager.LoadScene(0); // back to main menu
         }
-       
     }
-    
+
     public void PuzzelSolved(int PuzzelID)
     {
         Door[PuzzelID] = true;
