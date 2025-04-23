@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 
+
+
 public class ScoreboardDisplay : MonoBehaviour
 {
     public TextMeshProUGUI scoreboardText;
@@ -20,7 +22,12 @@ public class ScoreboardDisplay : MonoBehaviour
         int index = 1;
         foreach (float time in data.times)
         {
-            scoreboardText.text += index + ". " + time.ToString("F2") + "s\n";
+            int Min = Mathf.FloorToInt(time / 60);
+            float Sec = time % 60f;
+
+
+            scoreboardText.text += index + ". " + Min +":"+ Sec.ToString("00.00") + "\n";
+            
             index++;
         }
     }

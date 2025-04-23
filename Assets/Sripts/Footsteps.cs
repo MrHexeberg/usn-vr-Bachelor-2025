@@ -16,6 +16,10 @@ public class Footsteps : MonoBehaviour
     private float lastFootstepTime = -1f;
     private bool isIndoors = false;
 
+public Rigidbody rb;
+
+    [SerializeField] private float speed;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -23,8 +27,11 @@ public class Footsteps : MonoBehaviour
     }
 
     void Update()
+
+        //characterController.isGrounded &&
     {
-        bool isMoving = characterController.isGrounded && characterController.velocity.magnitude > 0.5f;
+        bool isMoving =  characterController.velocity.magnitude > 0.5f;
+        speed = characterController.velocity.magnitude;
 
         if (isMoving)
         {

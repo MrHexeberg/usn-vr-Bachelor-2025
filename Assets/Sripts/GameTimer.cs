@@ -11,13 +11,23 @@ public class GameTimer : MonoBehaviour
         if (isRunning)
             playTime += Time.deltaTime;
 
-       
+
         // if (Input.GetKeyDown(KeyCode.T))
         // {
         //     Debug.Log("T key was pressed!"); //testing button T to know if timer works before we add puzzle 3 so timer stops..
         //     StopTimer();
         //     UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
         // }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+         {
+           
+           StopTimer();
+           ResetTimer(); 
+           UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
+         }  
+
+
     }
 
     public void StopTimer()
@@ -33,6 +43,21 @@ public class GameTimer : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         UnityEngine.SceneManagement.SceneManager.LoadScene(0); // Loads scene by build index (Main Menu)
+    }
+
+    void ResetTimer()
+    {
+        playTime=0f;
+
+    }
+
+    void RestartWithoutSave()
+    {
+
+        StopTimer();
+        ResetTimer();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
+
     }
 
     void SaveTime(float newTime)
