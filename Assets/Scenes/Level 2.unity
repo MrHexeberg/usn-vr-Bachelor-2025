@@ -1799,6 +1799,8 @@ MonoBehaviour:
   outdoorFootstepClip: {fileID: 8300000, guid: aab3f274131efb4498fcd4bdded663df, type: 3}
   indoorFootstepClip: {fileID: 8300000, guid: 6857457602335924294d90306cc4c8a8, type: 3}
   footstepInterval: 0.5
+  rb: {fileID: 0}
+  speed: 0
 --- !u!136 &467024029
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2466,7 +2468,7 @@ MonoBehaviour:
   m_text: 'This game was developed as part of a Bachelor thesis project by Group
     3 at USN, 2025.
 
-    
+
 
     The project showcases immersive VR design, environmental
     storytelling, and puzzle-solving mechanics.

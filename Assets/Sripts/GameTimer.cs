@@ -22,9 +22,10 @@ public class GameTimer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
          {
            
-           StopTimer();
-           ResetTimer(); 
-           UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
+           //StopTimer();
+           //ResetTimer(); 
+           RestartWithoutSave();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
          }  
 
 
@@ -54,7 +55,8 @@ public class GameTimer : MonoBehaviour
     void RestartWithoutSave()
     {
 
-        StopTimer();
+        isRunning = false; 
+        // StopTimer();
         ResetTimer();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
 
