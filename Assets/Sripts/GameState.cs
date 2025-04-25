@@ -7,34 +7,36 @@ public class GameState : MonoBehaviour
 {
     public GameTimer gameTimer;
 
-    public bool[] Door = { false, false, false, false,false };
-    
+    public bool[] Door = { false, false, false, false, false };
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Door[4] == true)
         {
-            if (gameTimer != null)
+            if (Door[4] == true)
             {
-                gameTimer.StopTimer();
-            }
+                if (gameTimer != null && gameTimer.isRunning == true)
+                {
+                    gameTimer.StopTimer();
+                }
 
-            SceneManager.LoadScene(0); // back to main menu
+
+            }
+        }
+    }
+        public void PuzzelSolved(int PuzzelID)
+        {
+            Door[PuzzelID] = true;
+        }
+        public void PuzzelUnSolved(int PuzzelID) {
+            Door[PuzzelID] = false;
         }
     }
 
-    public void PuzzelSolved(int PuzzelID)
-    {
-        Door[PuzzelID] = true;
-    }
-    public void PuzzelUnSolved(int PuzzelID){
-        Door[PuzzelID] = false;
-    }
-}

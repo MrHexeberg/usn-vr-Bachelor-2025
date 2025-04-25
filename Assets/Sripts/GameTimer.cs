@@ -4,7 +4,9 @@ using System.Collections;
 public class GameTimer : MonoBehaviour
 {
     public static float playTime = 0f;
-    private bool isRunning = true;
+    public bool isRunning = true;
+
+    
 
     void Update()
     {
@@ -33,11 +35,17 @@ public class GameTimer : MonoBehaviour
 
     public void StopTimer()
     {
-        isRunning = false;
-        SaveTime(playTime);
+        if (isRunning = true)
+        {
 
-        // here we get littlee delayS
-        StartCoroutine(LoadMainMenuAfterDelay(5f)); 
+            isRunning = false;
+
+            StartCoroutine(LoadMainMenuAfterDelay(5f));
+
+            SaveTime(playTime);
+
+            // here we get littlee delayS
+        }
     }
 
     IEnumerator LoadMainMenuAfterDelay(float delay)

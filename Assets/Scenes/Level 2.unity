@@ -1795,12 +1795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3405cebeb4d1fef439194452755a952e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 467024025}
-  outdoorFootstepClip: {fileID: 8300000, guid: aab3f274131efb4498fcd4bdded663df, type: 3}
-  indoorFootstepClip: {fileID: 8300000, guid: 6857457602335924294d90306cc4c8a8, type: 3}
-  footstepInterval: 0.5
-  rb: {fileID: 0}
-  speed: 0
 --- !u!136 &467024029
 CapsuleCollider:
   m_ObjectHideFlags: 0
