@@ -1,84 +1,86 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class GameTimer : MonoBehaviour
 {
-    public static float playTime = 0f;
-    public bool isRunning = true;
+    public static float playTime = 0f;  // This is like it starts at 0secs, it will count up while player is playing  the game.
+    public bool isRunning = true;       // This indicates that our timer is working(counting). Not stopped
 
-    
+
 
     void Update()
     {
-        if (isRunning)
-            playTime += Time.deltaTime;
+        if (isRunning) {
 
+            playTime += Time.deltaTime;    // Time.deltaTime:  is the time that is being passed since last frame to playTIme
 
-        // if (Input.GetKeyDown(KeyCode.T))
-        // {
-        //     Debug.Log("T key was pressed!"); //testing button T to know if timer works before we add puzzle 3 so timer stops..
-        //     StopTimer();
-        //     UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
-        // }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-         {
+        }
            
-           //StopTimer();
-           //ResetTimer(); 
-           RestartWithoutSave();
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))  // Esc button is pressed on keyboard, so timer being rest/no save and we go to main menu again
+        {
+
+
+            RestartWithoutSave();
             UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
-         }  
+        }
 
 
     }
 
     public void StopTimer()
     {
-        if (isRunning = true)
+        if (isRunning == true) // Ok we says here that in case our timer is running:
         {
 
-            isRunning = false;
+            isRunning = false;  // It gets turned off here
 
-            StartCoroutine(LoadMainMenuAfterDelay(5f));
+            StartCoroutine(LoadMainMenuAfterDelay()); //Delay, wait 5secs before going to mainemnu
 
-            SaveTime(playTime);
+            SaveTime(playTime);              // time being saved here "playtime" that was in beginning 0secs when we started so player can see score later.
 
-            // here we get littlee delayS
+           
         }
     }
 
-    IEnumerator LoadMainMenuAfterDelay(float delay)
+    IEnumerator LoadMainMenuAfterDelay() // Function Responsible on delay 5sec
     {
-        yield return new WaitForSeconds(delay);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0); // Loads scene by build index (Main Menu)
+        yield return new WaitForSeconds(5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0); // Loads scene by build index (Main Menu) that is Level 2. Index  is 0 in buildsettings in our project. so it gets reloaded. 
     }
 
-    void ResetTimer()
+    void ResetTimer() // Reset timer to 0sec
     {
-        playTime=0f;
+        playTime = 0f;
 
     }
 
     void RestartWithoutSave()
     {
 
-        isRunning = false; 
-        // StopTimer();
-        ResetTimer();
+        isRunning = false; // Timer stops
+
+        ResetTimer(); // We decide to reset timer when we do restart
         UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Level 2");
 
     }
 
     void SaveTime(float newTime)
     {
-        string json = PlayerPrefs.GetString("Scores", "");
-        ScoreData data = string.IsNullOrEmpty(json) ? new ScoreData() : JsonUtility.FromJson<ScoreData>(json);
-
-        data.times.Add(newTime); // Save current time
-
-        string updatedJson = JsonUtility.ToJson(data);
-        PlayerPrefs.SetString("Scores", updatedJson);
-        PlayerPrefs.Save();
+        
+        for (int i = 1; i <= 8; i++) //We saving 8 scores 
+        {
+            if (!PlayerPrefs.HasKey("Score" + i)) // cehck if there is no slot, 
+            {
+                PlayerPrefs.SetFloat("Score" + i, newTime); //First we save time to Playerprefs and then permentaly
+                PlayerPrefs.Save();
+                return;
+            }
+        }
     }
 }
+

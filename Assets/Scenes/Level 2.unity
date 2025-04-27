@@ -1755,7 +1755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176a72588efffd348b12dfe1831e6556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFallingFromTrap: 0
 --- !u!54 &467024027
 Rigidbody:
   m_ObjectHideFlags: 0
