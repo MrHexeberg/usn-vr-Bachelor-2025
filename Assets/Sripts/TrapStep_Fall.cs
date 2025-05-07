@@ -46,10 +46,7 @@ public class TrapStep_Fall : MonoBehaviour
         stairMesh.enabled = false;  // here collider gets disabled 
         StartCoroutine(ReenableStair(stairMesh)); //it gets disabled for 5sec and then reenabled or player cant step on stairs.StarCourtine used to maek the delay and take the function IEnumerator "RenableStair" so it will only be disabled for 5secs. 
        
-        // Forcing rigidbody to fall faster downword so trap fall will work. (note rigidbody: it allows gameobj in unity to move with physics).
-        rb.isKinematic = false; //here physics affect trap
-        rb.useGravity = true;   //Gravity is again applied
-        rb.AddForce(Vector3.down * 5f, ForceMode.Impulse); // Here it means that obj is going downword first, then multipled with 5 so it goes down more and happens quickly.
+        
 
 
 
