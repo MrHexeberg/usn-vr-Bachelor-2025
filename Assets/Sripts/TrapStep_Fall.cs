@@ -4,7 +4,7 @@ using UnityEngine;
 public class TrapStep_Fall : MonoBehaviour
 {
     private bool isTriggered = false;
-    private Rigidbody rb;
+    
 
     [SerializeField] private GameObject stairs; 
     [SerializeField] private AudioSource audioSource;  
@@ -12,12 +12,7 @@ public class TrapStep_Fall : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-
-        // In Generall having debug errors/warrnings can help alot with testing to identiy the problem fast and solve it. 
-
-        if (rb == null)
-            Debug.LogError("TrapStep_Fall: Rigidbody is missing!"); // Here this during testing at first its better to have log errors, so lets say we dont have rightbody on trap so we get error and puzzle will not work. THis is like very important that affects whole puzzle so it needs more attention
+        
 
         if (stairs == null)
             Debug.LogError("TrapStep_Fall: Stairs reference is missing!"); //  It's same as first logerror but difference  is about stair gameobj. 

@@ -4,7 +4,7 @@ using System.Collections;
 public class TrapStep : MonoBehaviour
 {
     private bool isTriggered = false; // Here it should be false flagged because trap isn't triggered/activiated yet.
-    private Rigidbody rb;  // Referencse to rigdbody 
+    
 
     [SerializeField] private GameObject stairs; // Assign the stairs GameObject in the Inspector with help of the "serializefield" so it will be visible           
     [SerializeField] private AudioSource audioSource;    // This is audio source that plays sound
@@ -12,10 +12,7 @@ public class TrapStep : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-
-        if (rb == null)
-            Debug.LogError("TrapStep: Rigidbody is missing!");  // Here this during testing at first its better to have log errors, so lets say we dont have rightbody on trap so we get error and puzzle will not work. THis is like very important that affects whole puzzle so it needs more attention
+       
 
         if (stairs == null)
             Debug.LogError("TrapStep: Stairs reference is missing!");  // Here its same as first logerror but difference thsi is abt stair gameobj
