@@ -54,9 +54,9 @@ public class Door : MonoBehaviour
 
 
 
-    public void DoorOpen()
+    public void DoorOpen()// this transform the angle of the door a small amount every time it get called and playes the audio audio clip
     {
-        transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * Speed);
+        transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * Speed); // the amount that the door is transformed per fram
        if (audioSource.clip != DoorAudioOpen){
         audioSource.Stop(); 
         audioSource.clip = DoorAudioOpen;

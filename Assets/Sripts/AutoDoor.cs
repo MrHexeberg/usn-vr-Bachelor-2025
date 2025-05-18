@@ -9,7 +9,7 @@ public class AutoDoor : Door
     {
     if (DoorState == true)
         {
-            DoorOpen();
+            DoorOpen(); // this called function that is inhereted from the Door script 
         }
         else
         {
