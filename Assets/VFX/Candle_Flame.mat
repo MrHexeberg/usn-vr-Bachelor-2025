@@ -13,6 +13,8 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
+  - _ENVIRONMENTREFLECTIONS_OFF
+  - _SPECULARHIGHLIGHTS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 1
@@ -191,7 +193,7 @@ Material:
     - _Ambient_Occlusion: 0
     - _ApertureSize: 0.849
     - _Blend: 1
-    - _BlendModePreserveSpecular: 1
+    - _BlendModePreserveSpecular: 0
     - _BlendOp: 0
     - _BrightnessMultiplier: 3.93
     - _BumpScale: 1
@@ -206,7 +208,7 @@ Material:
     - _DstBlendAlpha: 10
     - _EnableHeightBlend: 0
     - _EnableInstancedPerPixelNormal: 1
-    - _EnvironmentReflections: 1
+    - _EnvironmentReflections: 0
     - _FakeGlow: 0.256
     - _FeatheringEffect: 0.912
     - _FlameFlickerSpeed: 0.97
@@ -215,7 +217,7 @@ Material:
     - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _HeightTransition: 0
-    - _Metallic: 0.005
+    - _Metallic: 0
     - _Metallic0: 0
     - _Metallic1: 0
     - _Metallic2: 0
@@ -240,7 +242,7 @@ Material:
     - _Smoothness_Power: 0
     - _SpecSource: 0
     - _Specular: 1
-    - _SpecularHighlights: 1
+    - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 1

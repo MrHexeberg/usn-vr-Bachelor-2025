@@ -12,20 +12,16 @@ public class PuzzeOneSript : MonoBehaviour
     public string TagWanted;
     
      public PuzzeCollecterSript PuzzeC;
-    // Start is called before the first frame update
+    
     void Start()
     {
         PuzzeC = gameObject.GetComponentInParent<PuzzeCollecterSript>();
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 
-   void OnTriggerEnter(Collider Hitinfo){
+   void OnTriggerEnter(Collider Hitinfo){ // this you will need to edit TagWanted in the inspetor for this to work
         if (Hitinfo.CompareTag(TagWanted))
         {
             PuzzeC.PuzzelPart(PartID,true);

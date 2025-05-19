@@ -11,18 +11,15 @@ public class PuzzeCollecterSript : MonoBehaviour
 
     public bool[] Parts = {false};
      public GameState GameState;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
-        GameState = gameObject.GetComponentInParent<GameState>();
-        
+        GameState = gameObject.GetComponentInParent<GameState>(); 
+        // this script need to be a child of an object with the GameState sript on it 
+    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void PuzzelPart(int PartID,bool State){
         Parts[PartID] = State;
